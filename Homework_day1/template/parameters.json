@@ -1,0 +1,63 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "value": "westeurope"
+        },
+        "networkInterfaceName": {
+            "value": "test-vm1364"
+        },
+        "enableAcceleratedNetworking": {
+            "value": true
+        },
+        "subnetName": {
+            "value": "epm-rdsp-westeurope-subnet"
+        },
+        "virtualNetworkId": {
+            "value": "/subscriptions/d141e78e-f7a9-4013-bb34-623f58247d8b/resourceGroups/epm-rdsp/providers/Microsoft.Network/virtualNetworks/epm-rdsp-westeurope-vnet"
+        },
+        "publicIpAddressName": {
+            "value": "test-vm1-ip"
+        },
+        "publicIpAddressType": {
+            "value": "Dynamic"
+        },
+        "publicIpAddressSku": {
+            "value": "Basic"
+        },
+        "virtualMachineName": {
+            "value": "test-vm1"
+        },
+        "virtualMachineComputerName": {
+            "value": "test-vm1"
+        },
+        "virtualMachineRG": {
+            "value": "Feliks_Ianganaev"
+        },
+        "osDiskType": {
+            "value": "Standard_LRS"
+        },
+        "virtualMachineSize": {
+            "value": "Standard_DS1_v2"
+        },
+        "adminUsername": {
+            "value": "azure-user"
+        },
+        "adminPassword": {
+            "reference": {
+				"keyVault": {
+				"id": "/subscriptions/d141e78e-f7a9-4013-bb34-623f58247d8b/resourceGroups/Feliks_Ianganaev/providers/Microsoft.KeyVault/vaults/ianganaev-key-vault" 
+				},
+				"secretName": "test-secret-00192"
+			}
+				
+        },
+        "patchMode": {
+            "value": "AutomaticByOS"
+        },
+        "enableHotpatching": {
+            "value": false
+        }
+    }
+}
